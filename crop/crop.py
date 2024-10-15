@@ -2,11 +2,11 @@ import cv2
 import numpy as np
 
 # 비디오 파일 열기
-video_capture = cv2.VideoCapture('./data/video_20240829_204726.avi')
+video_capture = cv2.VideoCapture('C:/Users/gram15/Desktop/video6_LDC_rev.mp4')
 
 # crop 영역 좌상단과 우하단 좌표 설정
-crop_top_left = (360, 400)  # (x, y)  346 260  173
-crop_bottom_right = (670, 640)  # (x, y) 540 350
+crop_top_left = (150, 100)  # (x, y)  346 260  173
+crop_bottom_right = (500, 360)  # (x, y) 540 350
 
 # crop 영역의 너비와 높이 계산
 crop_width = crop_bottom_right[0] - crop_top_left[0]
@@ -37,7 +37,7 @@ def gamma_correction_frame(frame):
 
 
 # 비디오 저장을 위한 설정 (crop된 크기에 맞추기)
-crop_video = cv2.VideoWriter('./data/video_20240829_204726_crop.avi',
+crop_video = cv2.VideoWriter('C:/Users/gram15/Desktop/video6_LDC_rev_crop.mp4',
                              cv2.VideoWriter_fourcc(*'XVID'),
                              30,
                              (crop_width, crop_height),
